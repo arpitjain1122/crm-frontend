@@ -38,6 +38,7 @@ export const ResetPassword = ({handleOnchange,handleOnResetSubmit,formSwitcher, 
   )
 }
 
+// below code is written to check the type of arguments and also to maintain code 
 ResetPassword.protoTypes = {
 
     handleOnchange: PropTypes.func.isRequired,
