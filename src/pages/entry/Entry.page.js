@@ -35,6 +35,16 @@ export const Entry = () => {
     // TODO call api to submit the form
     console.log(email, password);
   };
+  
+  const handleOnResetSubmit = e => {
+    e.preventDefault()
+
+    if (!email) {
+      alert("Fill all the form")
+    }
+    // TODO call api to submit the form
+    console.log(email);
+  };
 
   const formSwitcher = frmtype => {
     setFormLoad(frmtype)
@@ -51,7 +61,7 @@ export const Entry = () => {
 
         {frmLoad === 'reset' &&
           <ResetPassword handleOnchange={handleOnchange} email={email}
-            handleOnSubmit={handleOnSubmit}
+          handleOnResetSubmit={handleOnResetSubmit}
             formSwitcher={formSwitcher}
           ></ResetPassword>}
       </Jumbotron>

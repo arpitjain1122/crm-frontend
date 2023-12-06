@@ -3,14 +3,14 @@ import PropTypes from 'prop-types'
 import {Container, Row, Col, Form,Button}from "react-bootstrap"
 import { propTypes } from 'react-bootstrap/esm/Image'
 
-export const ResetPassword = ({handleOnchange,handleOnSubmit,formSwitcher, email }) => {
+export const ResetPassword = ({handleOnchange,handleOnResetSubmit,formSwitcher, email }) => {
   return (
     <Container>
         <Row>
             <Col>
             <h1 className='text-info text-center'>Reset Password</h1>
             <hr />
-            <Form autoComplete='off' onSubmit={handleOnSubmit}>
+            <Form autoComplete='off' onSubmit={handleOnResetSubmit}>
                 <Form.Group>
                     <Form.Label>Email address</Form.Label>
                     <Form.Control
@@ -23,7 +23,7 @@ export const ResetPassword = ({handleOnchange,handleOnSubmit,formSwitcher, email
                     />
                 </Form.Group>
                 
-                <Button type="submit">Login</Button>
+                <Button type="submit">Reset Password</Button>
             </Form>
             <hr/>
             </Col>
@@ -41,7 +41,7 @@ export const ResetPassword = ({handleOnchange,handleOnSubmit,formSwitcher, email
 ResetPassword.protoTypes = {
 
     handleOnchange: PropTypes.func.isRequired,
-    handleOnSubmit: PropTypes.func.isRequired,
+    handleOnResetSubmit: PropTypes.func.isRequired,
     formSwitcher: PropTypes.func.isRequired,
     email: PropTypes.string.isRequired,
     
