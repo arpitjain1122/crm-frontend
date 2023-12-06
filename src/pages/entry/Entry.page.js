@@ -35,18 +35,25 @@ export const Entry = () => {
     // TODO call api to submit the form
     console.log(email, password);
   };
+
+  const formSwitcher = frmtype => {
+    setFormLoad(frmtype)
+  }
   return (
     <div className='entry-page bg-info'>
       <Jumbotron className='form-box'>
+
         {frmLoad === 'login' &&
           <Login handleOnchange={handleOnchange} email={email} pass={password}
             handleOnSubmit={handleOnSubmit}
+            formSwitcher={formSwitcher}
           ></Login>}
 
-          {frmLoad === 'reset' &&
-        <ResetPassword handleOnchange={handleOnchange} email={email}
-          handleOnSubmit={handleOnSubmit}
-        ></ResetPassword>}
+        {frmLoad === 'reset' &&
+          <ResetPassword handleOnchange={handleOnchange} email={email}
+            handleOnSubmit={handleOnSubmit}
+            formSwitcher={formSwitcher}
+          ></ResetPassword>}
       </Jumbotron>
     </div>
   )

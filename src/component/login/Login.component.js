@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import {Container, Row, Col, Form,Button}from "react-bootstrap"
 import { propTypes } from 'react-bootstrap/esm/Image'
 
-export const Login = ({handleOnchange,handleOnSubmit, email , pass}) => {
+export const Login = ({handleOnchange,handleOnSubmit,formSwitcher, email , pass}) => {
   return (
     <Container>
         <Row>
@@ -41,7 +41,7 @@ export const Login = ({handleOnchange,handleOnSubmit, email , pass}) => {
 
         <Row>
             <Col>
-            <a href='#!'> Forgot Password</a>
+            <a href='#!'onClick={() => formSwitcher('reset')}> Forgot Password</a>
             </Col>
         </Row>
     </Container>
@@ -52,6 +52,7 @@ Login.protoTypes = {
 
     handleOnchange: PropTypes.func.isRequired,
     handleOnSubmit: PropTypes.func.isRequired,
+    formSwitcher: PropTypes.func.isRequired,
     email: PropTypes.string.isRequired,
     pass: PropTypes.string.isRequired,
 }
